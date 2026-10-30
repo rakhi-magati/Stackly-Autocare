@@ -1,0 +1,596 @@
+﻿* {
+    box-sizing: border-box
+}
+
+.dashboard-page {
+    margin: 0;
+    min-width: 320px;
+    background: #f7f9fc;
+    color: #101828;
+    font-family: Manrope, Arial, sans-serif
+}
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 210px;
+    padding: 17px 13px;
+    background: #0a3979;
+    color: #fff;
+    display: flex;
+    flex-direction: column
+}
+
+.dash-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 800
+}
+
+.dash-brand span {
+    font-size: 25px
+}
+
+.side-nav {
+    display: grid;
+    gap: 7px;
+    margin-top: 43px
+}
+
+.side-nav a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 27px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800
+}
+
+.side-nav a span {
+    width: 16px;
+    text-align: center;
+    font-size: 17px
+}
+
+.side-nav a:hover,
+.side-nav .selected {
+    background: #2165b7;
+    box-shadow: 0 2px 4px #001d4e66
+}
+
+.drive-better {
+    display: grid;
+    gap: 9px;
+    margin: auto 0 17px;
+    text-align: center
+}
+
+.drive-better span {
+    font-size: 53px
+}
+
+.drive-better strong {
+    font-size: 20px;
+    line-height: 1.4
+}
+
+.dash-main {
+    min-height: 100vh;
+    margin-left: 210px
+}
+
+.dash-header {
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 15px;
+    background: #fff;
+    border-bottom: 2px solid #d9dde3;
+    box-shadow: 0 1px 3px #0000001a
+}
+
+.dash-search {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.dash-search span {
+    font-size: 29px;
+    color: #000
+}
+
+.dash-search input {
+    width: 313px;
+    height: 35px;
+    padding: 0 25px;
+    border: 0;
+    border-radius: 20px;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px #0003;
+    font: 11px Manrope, Arial
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 13px
+}
+
+.user-area button {
+    border: 0;
+    background: transparent;
+    font-size: 20px
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f1c9af;
+    color: #173761;
+    font-size: 11px;
+    font-weight: 800
+}
+
+.user-area strong {
+    display: block;
+    font-size: 17px
+}
+
+.user-area small {
+    display: block;
+    color: #555;
+    font-size: 15px
+}
+
+.chevron {
+    margin-left: 25px;
+    font-size: 24px
+}
+
+.dashboard-content {
+    width: calc(100% - 56px);
+    margin: 0 28px;
+    padding: 21px 0
+}
+
+.welcome-row h1 {
+    margin: 0;
+    font-size: 25px;
+    letter-spacing: -1px
+}
+
+.welcome-row h1 span {
+    font-size: 22px
+}
+
+.welcome-row p {
+    margin: 18px 0 32px;
+    color: #687080;
+    font-size: 11px
+}
+
+.top-row {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr);
+    gap: 26px
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px
+}
+
+.stat-card,
+.upcoming-card,
+.orders-card,
+.vehicle-card,
+.quick-card {
+    border: 1px solid #c6c9cd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 3px 3px #00000036
+}
+
+.stat-card {
+    height: 153px;
+    padding: 10px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.stat-card i {
+    display: grid;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+    border-radius: 8px;
+    background: #cec9ff;
+    color: #183b8a;
+    font-size: 22px;
+    font-style: normal
+}
+
+.stat-card h3 {
+    margin: 14px 0 7px;
+    color: #123365;
+    font-size: 11px
+}
+
+.stat-card b {
+    font-size: 9px
+}
+
+.stat-card a {
+    margin-top: auto;
+    color: #0878ff;
+    font-size: 10px;
+    font-weight: 800
+}
+
+.stat-card a span {
+    margin-left: 17px;
+    font-size: 21px;
+    vertical-align: -2px
+}
+
+.vehicle-card {
+    height: 153px;
+    overflow: hidden
+}
+
+.vehicle-image {
+    height: 76px;
+    background: linear-gradient(90deg, #1114, #1110), url('assets/login.png') center 52%/cover
+}
+
+.vehicle-card h3 {
+    margin: 15px 20px 9px;
+    color: #0b3671;
+    font-size: 10px
+}
+
+.vehicle-card p {
+    margin: 0 20px;
+    font-size: 8px
+}
+
+.vehicle-button {
+    display: block;
+    margin: 14px 20px 0;
+    padding: 8px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    color: #1677f5;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 800
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    margin-top: 34px
+}
+
+.upcoming-card {
+    position: relative;
+    height: 146px;
+    padding: 19px 23px
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.card-top h2,
+.quick-card h2 {
+    margin: 0;
+    font-size: 11px
+}
+
+.confirmed {
+    padding: 6px 15px;
+    border: 1px solid #aad5ad;
+    border-radius: 14px;
+    background: #e2ffe3;
+    color: #40a64a;
+    font-size: 10px
+}
+
+.upcoming-card h3 {
+    margin: 19px 0;
+    font-size: 11px
+}
+
+.upcoming-card p {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    font-size: 10px
+}
+
+.outline-action {
+    position: absolute;
+    right: 16px;
+    bottom: 33px;
+    padding: 8px 16px;
+    border: 1px solid #2f86ff;
+    border-radius: 5px;
+    color: #1677f5;
+    font-size: 10px
+}
+
+.offer-card {
+    height: 146px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    background: linear-gradient(120deg, #0d3982, #0059c9);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.offer-card small {
+    font-size: 10px
+}
+
+.offer-card h2 {
+    margin: 12px 0;
+    font-size: 26px
+}
+
+.offer-card p {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 800
+}
+
+.offer-card a {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 7px 18px;
+    border-radius: 3px;
+    background: #fff;
+    color: #0878ff;
+    font-size: 8px;
+    font-weight: 800
+}
+
+.offer-card>span {
+    align-self: center;
+    color: #f0f0f0;
+    font-size: 76px;
+    transform: rotate(-22deg)
+}
+
+.bottom-row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(290px, 1fr);
+    gap: 26px;
+    margin-top: 37px
+}
+
+.orders-card {
+    height: 224px;
+    padding: 20px 21px
+}
+
+.orders-card .card-top a {
+    color: #0878ff;
+    font-size: 11px;
+    font-weight: 800
+}
+
+.order-table {
+    margin-top: 22px;
+    font-size: 10px
+}
+
+.order-table>div {
+    display: grid;
+    grid-template-columns: 1.05fr 1.5fr 1.35fr .9fr;
+    align-items: center;
+    min-height: 39px
+}
+
+.table-head {
+    color: #666;
+    font-size: 10px
+}
+
+.order-table b {
+    font-weight: 600
+}
+
+.order-table em {
+    font-style: normal
+}
+
+.delivered {
+    color: #43ad45
+}
+
+.shipped {
+    color: #1600e6
+}
+
+.quick-card {
+    height: 224px;
+    padding: 18px 15px
+}
+
+.quick-card h2 {
+    margin: 0 0 14px;
+    font-size: 12px
+}
+
+.quick-card a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 12px;
+    padding: 10px 13px;
+    border: 1px solid #acd0ff;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px #0002;
+    color: #0f75e9;
+    font-size: 15px
+}
+
+.quick-card a b {
+    color: #111;
+    font-size: 11px
+}
+
+.quick-card a span {
+    margin-left: auto;
+    font-size: 21px
+}
+
+@media(max-width:900px) {
+    .dashboard-content {
+    width: calc(100% - 56px);
+    margin: 0 28px;
+    padding: 21px 0
+}
+
+    .top-row {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr);
+    gap: 26px
+}
+
+    .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px
+}
+
+    .service-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    margin-top: 34px
+}
+
+    .bottom-row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(290px, 1fr);
+    gap: 26px;
+    margin-top: 37px
+}
+}
+
+@media(max-width:760px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        min-height: 0;
+        padding: 12px 16px
+    }
+
+    .side-nav,
+    .drive-better {
+        display: none
+    }
+
+    .dash-main {
+        margin-left: 0
+    }
+
+    .dash-header {
+        padding: 0 16px
+    }
+
+    .dashboard-content {
+    width: calc(100% - 56px);
+    margin: 0 28px;
+    padding: 21px 0
+}
+
+    .dash-search input {
+        width: 145px
+    }
+
+    .user-area strong,
+    .user-area small,
+    .chevron {
+        display: none
+    }
+
+    .top-row,
+    .service-row,
+    .bottom-row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(290px, 1fr);
+    gap: 26px;
+    margin-top: 37px
+}
+
+    .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px
+}
+
+    .right-column {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+@media(max-width:430px) {
+    .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px
+}
+
+    .stat-card {
+        height: 105px
+    }
+
+    .orders-card {
+        overflow-x: auto
+    }
+
+    .order-table {
+        min-width: 380px
+    }
+}
+/* Reference dashboard layout */
+@media (min-width: 1000px) {
+  .sidebar { width: 270px; padding: 28px 15px; background: #133d76; }
+  .dash-main { margin-left: 270px; }
+  .dash-header { display: none; }
+  .dashboard-content { width: min(1506px, calc(100% - 100px)); margin: 0 auto; padding: 28px 0; }
+  .welcome-row h1 { font-size: 31px; }
+  .welcome-row p { margin: 22px 0 40px; font-size: 13px; }
+  .top-row { grid-template-columns: minmax(0, 3fr) 320px; gap: 44px; }
+  .stats-row { gap: 42px; }
+  .stat-card, .vehicle-card { height: 195px; }
+  .stat-card { padding: 13px 36px; }
+  .vehicle-image { height: 96px; }
+  .vehicle-card h3 { margin-top: 18px; }
+  .service-row { gap: 46px; margin-top: 40px; }
+  .upcoming-card, .offer-card { height: 177px; }
+  .bottom-row { grid-template-columns: minmax(0, 2fr) 500px; gap: 30px; margin-top: 48px; }
+  .orders-card, .quick-card { height: 287px; }
+  .side-nav { margin-top: 25px; gap: 10px; }
+  .side-nav a { padding: 16px 31px; font-size: 15px; }
+}

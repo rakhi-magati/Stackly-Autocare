@@ -1,0 +1,1121 @@
+/* Dashboard tabs (views), shared widgets, mobile tab strip. Original dashboard CSS untouched. */
+.dash-main {
+    display: flex;
+    flex-direction: column
+}
+
+.dashboard-content {
+    flex: 0 0 auto
+}
+
+.view {
+    display: none
+}
+
+.view.active {
+    display: block;
+    animation: viewIn .55s var(--ease)
+}
+
+@keyframes viewIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.view [hidden] {
+    display: none !important
+}
+
+.side-nav a {
+    transition: background .2s, transform .2s, box-shadow .2s
+}
+
+.side-nav a:hover:not(.selected) {
+    transform: translateX(4px)
+}
+
+/* page header inside a tab */
+.view-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap
+}
+
+.view-head h1 {
+    margin: 0;
+    font-size: 25px;
+    letter-spacing: -1px
+}
+
+.view-head p {
+    margin: 10px 0 0;
+    color: #687080;
+    font-size: 12px
+}
+
+/* cards */
+.vcard {
+    padding: 20px 22px;
+    border: 1px solid #c6c9cd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 3px 3px #00000036;
+    transition: transform .25s, box-shadow .25s;
+    font-size: 12px
+}
+
+.vcard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px #0a397a2e
+}
+
+.book-form:hover,
+.prof-form:hover,
+.pw-form:hover,
+.otable:hover {
+    transform: none
+}
+
+.vcard h2 {
+    margin: 0 0 14px;
+    font-size: 14px;
+    color: #0b3671
+}
+
+.vcard h3 {
+    margin: 0 0 4px;
+    font-size: 13px;
+    color: #0b3671
+}
+
+.vcard small {
+    color: #687080;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.muted {
+    color: #687080;
+    line-height: 1.6;
+    margin: 0 0 14px
+}
+
+.vgrid {
+    display: grid;
+    gap: 22px
+}
+
+.vgrid.two {
+    grid-template-columns: repeat(2, 1fr)
+}
+
+.vgrid.three {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.view .view-head+.vgrid,
+.view .vgrid+.vgrid {
+    margin-top: 0
+}
+
+/* staggered entrance for cards inside a freshly opened tab */
+.view.active .vcard {
+    animation: rise .7s var(--ease) backwards
+}
+
+.view.active .vcard:nth-child(2) {
+    animation-delay: .08s
+}
+
+.view.active .vcard:nth-child(3) {
+    animation-delay: .16s
+}
+
+.view.active .vcard:nth-child(4) {
+    animation-delay: .24s
+}
+
+.view.active .pgrid .vcard:nth-child(n+5) {
+    animation-delay: .3s
+}
+
+/* buttons, chips, badges */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border: 1px solid #2f86ff;
+    border-radius: 6px;
+    background: #fff;
+    color: #1677f5;
+    font: 800 11px Manrope, Arial, sans-serif;
+    cursor: pointer;
+    transition: background .2s, color .2s, transform .2s
+}
+
+.btn:hover {
+    background: #1677f5;
+    color: #fff;
+    transform: translateY(-1px)
+}
+
+.btn.primary {
+    background: #1677f5;
+    color: #fff
+}
+
+.btn.primary:hover {
+    background: #0d559f;
+    border-color: #0d559f
+}
+
+.btn.wide {
+    width: 100%;
+    height: 44px;
+    font-size: 12px
+}
+
+.chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px
+}
+
+.chip {
+    padding: 8px 15px;
+    border: 1px solid #c6c9cd;
+    border-radius: 20px;
+    background: #fff;
+    color: #123365;
+    font: 700 11px Manrope, Arial, sans-serif;
+    cursor: pointer;
+    transition: .2s
+}
+
+.chip:hover {
+    border-color: #1677f5;
+    color: #1677f5
+}
+
+.chip.on {
+    background: #0a3979;
+    border-color: #0a3979;
+    color: #fff
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 800;
+    font-style: normal;
+    white-space: nowrap
+}
+
+.badge.ok {
+    background: #e2ffe3;
+    color: #2f8a39
+}
+
+.badge.ship {
+    background: #e8e6ff;
+    color: #1600e6
+}
+
+.badge.warn {
+    background: #fff3dc;
+    color: #b87400
+}
+
+.kv {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 11px
+}
+
+.kv li {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px
+}
+
+.kv span {
+    color: #687080
+}
+
+.kv b {
+    color: #0b3671;
+    text-align: right
+}
+
+/* form controls */
+.vcard input:not([type=checkbox]):not([type=radio]),
+.vcard select,
+.vcard textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #fff;
+    color: #092d66;
+    font: 600 12px Manrope, Arial, sans-serif;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s
+}
+
+.vcard input:focus,
+.vcard select:focus,
+.vcard textarea:focus {
+    border-color: #1677f5;
+    box-shadow: 0 0 0 3px #1677f522
+}
+
+.vcard label {
+    display: grid;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #173761
+}
+
+.vcard textarea {
+    resize: vertical
+}
+
+.form-msg {
+    min-height: 16px;
+    margin: 10px 0;
+    color: #c0392b;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.form-msg.ok {
+    color: #2f8a39
+}
+
+.f2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px
+}
+
+.prof-form,
+.pw-form {
+    display: grid;
+    gap: 14px;
+    align-content: start
+}
+
+.prof-form .btn,
+.pw-form .btn {
+    justify-self: start
+}
+
+/* My Vehicles */
+.veh-img {
+    height: 150px;
+    margin: -4px 0 16px;
+    border-radius: 6px;
+    background-size: cover;
+    overflow: hidden;
+    transition: transform .5s var(--ease)
+}
+
+.vcard:hover .veh-img {
+    transform: scale(1.02)
+}
+
+.veh-img.bmw {
+    background: linear-gradient(90deg, #1114, #1110), url('assets/login.png') center 52%/cover
+}
+
+.veh-img.creta {
+    display: grid;
+    place-items: center;
+    font-size: 72px;
+    background: linear-gradient(135deg, #eaf4ff, #d8ddff)
+}
+
+.veh-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px
+}
+
+.veh-top h2 {
+    margin: 0 0 4px
+}
+
+.veh-tags {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0 16px
+}
+
+.veh-tags span {
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: #eaf4ff;
+    color: #1265bd;
+    font-size: 10px;
+    font-weight: 800
+}
+
+.veh-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px
+}
+
+.rows>div {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid #eef1f6;
+    transition: background .2s
+}
+
+.rows>div:hover {
+    background: #f6f9ff
+}
+
+.rows b {
+    color: #0b3671
+}
+
+/* Book Service */
+.book-layout {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 22px;
+    align-items: start
+}
+
+.book-form h2 {
+    margin: 22px 0 10px
+}
+
+.book-form h2:first-child {
+    margin-top: 0
+}
+
+.book-side {
+    display: grid;
+    gap: 22px
+}
+
+.svc-pick {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
+
+.svc-pick label {
+    position: relative;
+    cursor: pointer
+}
+
+.svc-pick input {
+    position: absolute;
+    opacity: 0
+}
+
+.svc-pick span {
+    display: grid;
+    gap: 3px;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    transition: .2s
+}
+
+.svc-pick i {
+    font-style: normal;
+    font-size: 22px
+}
+
+.svc-pick b {
+    font-size: 12px;
+    color: #0b3671
+}
+
+.svc-pick small {
+    font-weight: 600
+}
+
+.svc-pick span:hover {
+    border-color: #1677f5;
+    transform: translateY(-2px)
+}
+
+.svc-pick input:checked+span {
+    border-color: #1677f5;
+    background: #eaf4ff;
+    box-shadow: 0 0 0 2px #1677f533
+}
+
+.slots {
+    margin: 12px 0 4px
+}
+
+.check {
+    display: flex !important;
+    align-items: center;
+    gap: 9px;
+    grid-auto-flow: column;
+    margin: 12px 0
+}
+
+.check input {
+    width: 16px;
+    height: 16px;
+    accent-color: #1677f5
+}
+
+.sum-total {
+    margin: 16px 0 4px;
+    font-size: 12px;
+    color: #687080;
+    font-weight: 700
+}
+
+.sum-total b {
+    color: #0b3671;
+    font-size: 22px;
+    display: inline-block;
+    transition: transform .3s
+}
+
+.sum-total b.bump {
+    transform: scale(1.18)
+}
+
+.ticks2 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+    font-weight: 700;
+    color: #2b3a52
+}
+
+.ticks2 li::before {
+    content: "\2713";
+    display: inline-grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #d8ddff;
+    color: #1265bd;
+    font-size: 11px
+}
+
+/* Shop Parts */
+.cart-pill {
+    padding: 9px 16px;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid #c6c9cd;
+    font-size: 12px;
+    font-weight: 800;
+    color: #0b3671;
+    box-shadow: 0 2px 3px #0002;
+    transition: transform .3s
+}
+
+.cart-pill b {
+    display: inline-grid;
+    place-items: center;
+    min-width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    border-radius: 10px;
+    background: #1677f5;
+    color: #fff;
+    font-size: 11px
+}
+
+.cart-pill.pop {
+    animation: popC .45s var(--ease)
+}
+
+@keyframes popC {
+    40% {
+        transform: scale(1.15)
+    }
+}
+
+.pgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 20px
+}
+
+.prod {
+    position: relative;
+    display: flex;
+    flex-direction: column
+}
+
+.p-ico {
+    display: grid;
+    place-items: center;
+    height: 104px;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #eaf4ff, #d8ddff);
+    font-size: 46px;
+    transition: transform .4s var(--ease)
+}
+
+.prod:hover .p-ico {
+    transform: scale(1.05) rotate(-3deg)
+}
+
+.tag2 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 3px 9px;
+    border-radius: 12px;
+    background: #1265bd;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800
+}
+
+.prod p {
+    margin: 0 0 10px;
+    color: #687080;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.price2 {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    margin: auto 0 12px
+}
+
+.price2 b {
+    font-size: 16px;
+    color: #0b3671
+}
+
+.price2 s {
+    font-size: 11px;
+    color: #8a99ad
+}
+
+.add.added {
+    background: #43ad45;
+    border-color: #43ad45
+}
+
+.empty {
+    padding: 40px;
+    text-align: center;
+    color: #687080;
+    font-weight: 700
+}
+
+/* Orders + History */
+.o-stats .vcard {
+    display: grid;
+    gap: 6px
+}
+
+.o-stats b {
+    font-size: 26px;
+    color: #0b3671;
+    letter-spacing: -1px
+}
+
+.otable {
+    padding: 10px 20px 14px
+}
+
+.o-head,
+.o-row {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 1.2fr .9fr 1fr .8fr;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 4px
+}
+
+.o-head {
+    color: #687080;
+    font-weight: 800;
+    font-size: 11px
+}
+
+.o-row {
+    border-top: 1px solid #eef1f6;
+    transition: background .2s
+}
+
+.o-row:hover {
+    background: #f6f9ff
+}
+
+.o-row b {
+    color: #0b3671
+}
+
+.o-row .btn {
+    padding: 7px 12px
+}
+
+.track {
+    grid-column: 1/-1;
+    padding: 14px 8px 6px;
+    animation: viewIn .4s var(--ease)
+}
+
+.stepper {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.stepper li {
+    flex: 1;
+    position: relative;
+    padding-top: 24px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #8a95a6
+}
+
+.stepper li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+    border-radius: 50%;
+    background: #d5dbe5
+}
+
+.stepper li::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -50%;
+    width: 100%;
+    height: 2px;
+    background: #d5dbe5
+}
+
+.stepper li:first-child::after {
+    display: none
+}
+
+.stepper li.done {
+    color: #2b3a52
+}
+
+.stepper li.done::before,
+.stepper li.done::after,
+.stepper li.active::after {
+    background: #43ad45
+}
+
+.stepper li.active {
+    color: #0b3671
+}
+
+.stepper li.active::before {
+    background: #1677f5;
+    animation: blink2 1.6s ease-in-out infinite
+}
+
+.h-list {
+    display: grid;
+    gap: 14px
+}
+
+.h-item {
+    display: grid;
+    grid-template-columns: 64px 1fr auto auto;
+    gap: 16px;
+    align-items: center;
+    margin: 0
+}
+
+.h-date {
+    display: grid;
+    place-items: center;
+    height: 60px;
+    border-radius: 8px;
+    background: #eaf4ff;
+    color: #1265bd;
+    line-height: 1.1
+}
+
+.h-date b {
+    font-size: 20px
+}
+
+.h-date span {
+    font-size: 9px;
+    font-weight: 800
+}
+
+.h-main h3 {
+    font-size: 14px
+}
+
+.h-main p {
+    margin: 0;
+    color: #687080;
+    font-weight: 600
+}
+
+.h-detail {
+    grid-column: 1/-1;
+    margin: 2px 0 0;
+    padding: 14px 0 0 80px;
+    border-top: 1px dashed #d5dbe5;
+    display: grid;
+    gap: 8px;
+    list-style: none;
+    font-weight: 600;
+    color: #2b3a52;
+    animation: viewIn .4s var(--ease)
+}
+
+.h-detail li::before {
+    content: "\2022";
+    color: #1677f5;
+    margin-right: 10px;
+    font-weight: 800
+}
+
+/* Profile + Settings */
+.prof-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 22px;
+    align-items: start
+}
+
+.prof-card {
+    text-align: center;
+    display: grid;
+    gap: 10px;
+    justify-items: center
+}
+
+.avatar.big {
+    width: 84px;
+    height: 84px;
+    font-size: 26px;
+    animation: blink 3s ease-in-out infinite
+}
+
+.prof-card h2 {
+    margin: 6px 0 0;
+    font-size: 18px
+}
+
+.prof-card .kv,
+.rewards {
+    width: 100%;
+    text-align: left
+}
+
+.rewards {
+    margin: 12px 0 6px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #eaf4ff
+}
+
+.rw-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: #0b3671
+}
+
+.switch {
+    position: relative;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 0;
+    border-top: 1px solid #eef1f6;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 800;
+    color: #0b3671
+}
+
+.switch small {
+    display: block;
+    margin-top: 3px;
+    font-weight: 600
+}
+
+.switch input {
+    position: absolute;
+    opacity: 0
+}
+
+.switch i {
+    position: relative;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 22px;
+    border-radius: 12px;
+    background: #cbd5e1;
+    transition: .25s
+}
+
+.switch i::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px #0004;
+    transition: .25s var(--ease)
+}
+
+.switch input:checked+i {
+    background: #1677f5
+}
+
+.switch input:checked+i::after {
+    transform: translateX(18px)
+}
+
+.switch input:focus-visible+i {
+    box-shadow: 0 0 0 3px #1677f533
+}
+
+.sel {
+    display: grid !important;
+    margin-bottom: 14px
+}
+
+/* existing cards: keep their entrance but let hover-lift work (old rule used fill-mode forwards, which blocked :hover transforms) */
+.welcome-row,
+.stat-card,
+.vehicle-card,
+.upcoming-card,
+.offer-card,
+.orders-card,
+.quick-card,
+.health-card,
+.spend-card,
+.timeline-card,
+.remind-card,
+.activity-card {
+    opacity: 1;
+    animation-fill-mode: backwards
+}
+
+/* first load only (class removed by JS): wait for the page-open loader */
+.booting .welcome-row,
+.booting .stat-card,
+.booting .vehicle-card,
+.booting .upcoming-card,
+.booting .offer-card,
+.booting .orders-card,
+.booting .quick-card,
+.booting .health-card,
+.booting .spend-card,
+.booting .timeline-card,
+.booting .remind-card,
+.booting .activity-card {
+    animation-delay: calc(var(--i, 0)*.08s + 1s)
+}
+
+.booting .sidebar,
+.booting .dash-header {
+    animation-delay: .9s;
+    animation-fill-mode: backwards
+}
+
+.booting .ring-fg {
+    animation-delay: 1.7s
+}
+
+.booting .bar em,
+.booting .chart em {
+    animation-delay: 1.8s
+}
+
+/* user-chosen "reduce animations" */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+    animation: none !important;
+    transition: none !important
+}
+
+.reduce-motion .page-loader {
+    display: none
+}
+
+.reduce-motion .welcome-row,
+.reduce-motion .stat-card,
+.reduce-motion .vehicle-card,
+.reduce-motion .upcoming-card,
+.reduce-motion .offer-card,
+.reduce-motion .orders-card,
+.reduce-motion .quick-card,
+.reduce-motion .health-card,
+.reduce-motion .spend-card,
+.reduce-motion .timeline-card,
+.reduce-motion .remind-card,
+.reduce-motion .activity-card {
+    opacity: 1 !important
+}
+
+.reduce-motion .ring-fg {
+    stroke-dashoffset: 45 !important
+}
+
+.reduce-motion .bar em {
+    width: var(--w) !important
+}
+
+.reduce-motion .chart em {
+    height: calc(var(--h) - 22px) !important
+}
+
+.bar em {
+    width: 0
+}
+
+.prof-card .bar em {
+    animation: grow 1.2s var(--ease) .4s forwards
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .view.active .vcard,
+    .view.active {
+        animation: none !important
+    }
+}
+
+/* responsive */
+@media(max-width:900px) {
+
+    .vgrid.two,
+    .book-layout,
+    .prof-layout {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width:760px) {
+
+    /* sidebar tabs become a swipeable strip so every tab stays reachable on phones */
+    .side-nav {
+        display: flex;
+        gap: 6px;
+        margin-top: 12px;
+        overflow-x: auto;
+        padding-bottom: 4px
+    }
+
+    .side-nav a {
+        flex: 0 0 auto;
+        padding: 9px 14px;
+        white-space: nowrap
+    }
+
+    .dashboard-page .site-footer {
+        margin-left: 0
+    }
+
+    .otable {
+        overflow-x: auto
+    }
+
+    .o-head,
+    .o-row {
+        min-width: 620px
+    }
+
+    .f2,
+    .svc-pick {
+        grid-template-columns: 1fr
+    }
+
+    .h-item {
+        grid-template-columns: 56px 1fr auto
+    }
+
+    .h-item .btn {
+        grid-column: 2/-1;
+        justify-self: start
+    }
+
+    .h-detail {
+        padding-left: 0
+    }
+
+    .rows>div {
+        grid-template-columns: 1fr auto
+    }
+
+    .rows>div b {
+        display: none
+    }
+}
+
+@media(max-width:560px) {
+    .vgrid.three {
+        grid-template-columns: 1fr
+    }
+
+    .o-stats {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px
+    }
+
+    .o-stats .vcard {
+        padding: 14px
+    }
+}

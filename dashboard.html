@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard | StacklyCare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="dashboard-extra.css">
+  <link rel="stylesheet" href="dashboard-views.css">
+  <link rel="stylesheet" href="common.css">
+  <script src="common.js" defer></script>
+  <script src="dashboard-session.js" defer></script>
+  <script src="dashboard.js" defer></script>
+  <script src="dashboard-extra.js" defer></script>
+  <script src="dashboard-views.js" defer></script>
+</head>
+<body class="dashboard-page booting">
+  <div class="page-loader" aria-hidden="true"><div><span class="l-car">&#128663;</span><span class="l-road"></span>StacklyCare</div></div>
+  <aside class="sidebar">
+    <a class="dash-brand" href="index.html"><span>&#128663;</span>StacklyCare</a>
+    <nav class="side-nav">
+      <a class="selected" href="#dashboard"><span>&#9638;</span>Dashboard</a><a href="#vehicles"><span>&#128664;</span>My Vehicles</a><a href="#book"><span>&#128197;</span>Book Service</a><a href="#parts"><span>&#128722;</span>Shop parts</a><a href="#orders"><span>&#128230;</span>Orders</a><a href="#history"><span>&#128339;</span>Service History</a><a href="#profile"><span>&#128100;</span>Profile</a><a href="#settings"><span>&#9881;&#65039;</span>Settings</a>
+    </nav>
+    <div class="drive-better"><span>&#128663;</span><strong>Drive Better.<br>Stay Longer.</strong></div>
+  </aside>
+  <section class="dash-main">
+    <header class="dash-header"><label class="dash-search"><span>&#128269;</span><input type="search" placeholder="Search anything"></label><div class="user-area"><button aria-label="Notifications" class="bell">&#128276;</button><div class="avatar">SK</div><div><strong data-user-name>Customer</strong><small data-user-email>Customer</small></div><span class="chevron">&#8964;</span></div></header>
+    <main class="dashboard-content">
+      <section class="view active" id="view-dashboard">
+      <div class="welcome-row"><h1>Hello, Customer <span class="wave">&#128075;</span></h1><p>Here&rsquo;s what&rsquo;s happening with your vehicle today.</p></div>
+      <div class="top-row">
+        <div class="stats-row"><article class="stat-card"><i>&#128664;</i><h3>My Vehicles</h3><b>2 Vehicles</b><a href="#vehicles">View Details <span>&rsaquo;</span></a></article><article class="stat-card"><i>&#128197;</i><h3>Upcoming service</h3><b>3 Days</b><a href="#book">View Bookings <span>&rsaquo;</span></a></article><article class="stat-card"><i>&#128230;</i><h3>Total Orders</h3><b>5 Orders</b><a href="#orders">View Orders <span>&rsaquo;</span></a></article></div>
+        <article class="vehicle-card"><div class="vehicle-image"></div><h3>THE BMW M340i</h3><p>TN 10 AB 1234</p><a class="vehicle-button" href="#vehicles">View Details</a></article>
+      </div>
+      <div class="service-row"><article class="upcoming-card"><div class="card-top"><h2>Upcoming Service</h2><span class="confirmed">Confirmed</span></div><h3>Oil Change &amp; General Checkup</h3><p>&#128197; <b>01 Nov 2026</b><b>10.00 AM</b></p><a class="outline-action" href="#book">View Details</a></article><article class="offer-card"><div><small>Special Offer</small><h2>Flat 20% OFF</h2><p>On Genuine Parts</p><a href="#parts">Shop Now</a></div><span>&#9881;&#65039;</span></article></div>
+      <div class="bottom-row"><article class="orders-card"><div class="card-top"><h2>Recent Orders</h2><a href="#orders">View All Orders &rarr;</a></div><div class="order-table"><div class="table-head"><span>Order ID</span><span>Items</span><span>Date</span><span>Status</span></div><div><b>#ORD1005</b><span>Brake Pads (Set)</span><span>22 OCT 2026</span><em class="delivered">Delivered</em></div><div><b>#ORD1004</b><span>Engine Oil (5L)</span><span>18 OCT 2026</span><em class="shipped">Shipped</em></div><div><b>#ORD1003</b><span>Air Filter</span><span>12 OCT 2026</span><em class="delivered">Delivered</em></div></div></article><article class="quick-card"><h2>Quick Actions</h2><a href="#book">&#128197; <b>Book Service</b><span>&rsaquo;</span></a><a href="#parts">&#128722; <b>Shop Parts</b><span>&rsaquo;</span></a><a href="#orders">&#128666; <b>Track Order</b><span>&rsaquo;</span></a></article></div>
+
+      <div class="extra-row">
+        <article class="health-card">
+          <div class="card-top"><h2>Vehicle Health</h2><span class="confirmed">Good</span></div>
+          <div class="health-body">
+            <div class="ring" data-value="86"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52"/></svg><b><i data-count="86">0</i>%</b></div>
+            <ul class="health-list">
+              <li><span>Engine Oil</span><div class="bar"><em style="--w:72%"></em></div></li>
+              <li><span>Brake Pads</span><div class="bar"><em style="--w:90%"></em></div></li>
+              <li><span>Battery</span><div class="bar"><em style="--w:84%"></em></div></li>
+              <li><span>Tyres</span><div class="bar warn"><em style="--w:55%"></em></div></li>
+            </ul>
+          </div>
+        </article>
+        <article class="spend-card">
+          <div class="card-top"><h2>Service Spend</h2><small>Last 6 months</small></div>
+          <div class="chart">
+            <div><em style="--h:45%"></em><span>May</span></div><div><em style="--h:70%"></em><span>Jun</span></div><div><em style="--h:30%"></em><span>Jul</span></div>
+            <div><em style="--h:85%"></em><span>Aug</span></div><div><em style="--h:55%"></em><span>Sep</span></div><div class="now"><em style="--h:95%"></em><span>Oct</span></div>
+          </div>
+          <p class="spend-total">Total &nbsp;<b>&#8377;<i data-count="18450">0</i></b></p>
+        </article>
+      </div>
+      <div class="extra-row three">
+        <article class="timeline-card">
+          <div class="card-top"><h2>Service Tracker</h2><small>#BK2041 &middot; Hyundai Creta</small></div>
+          <ol class="timeline">
+            <li class="done"><b>Booked</b><span>24 Oct</span></li>
+            <li class="done"><b>Vehicle received</b><span>27 Oct</span></li>
+            <li class="active"><b>In service</b><span>Today</span></li>
+            <li><b>Quality check</b><span>Pending</span></li>
+            <li><b>Ready to drive</b><span>Pending</span></li>
+          </ol>
+        </article>
+        <article class="remind-card">
+          <div class="card-top"><h2>Reminders</h2><small>3 due</small></div>
+          <ul>
+            <li><i>&#128738;&#65039;</i><p><b>Oil change</b><span>Due in 3 days</span></p></li>
+            <li><i>&#128167;</i><p><b>Coolant top-up</b><span>Due in 3 weeks</span></p></li>
+            <li><i>&#128203;</i><p><b>Insurance renewal</b><span>Due in 45 days</span></p></li>
+          </ul>
+        </article>
+        <article class="activity-card">
+          <div class="card-top"><h2>Recent Activity</h2></div>
+          <ul>
+            <li><span class="dot"></span><p><b>Order #ORD1005 delivered</b><small>22 Oct, 4:10 PM</small></p></li>
+            <li><span class="dot"></span><p><b>Service confirmed for 01 Nov</b><small>27 Oct, 11:32 AM</small></p></li>
+            <li><span class="dot"></span><p><b>Offer unlocked: 20% off parts</b><small>01 Oct, 9:00 AM</small></p></li>
+          </ul>
+        </article>
+      </div>
+      </section>
+
+      <!-- ===== My Vehicles ===== -->
+      <section class="view" id="view-vehicles">
+        <div class="view-head"><div><h1>My Vehicles</h1><p>Everything about the cars on your account, in one place.</p></div><a class="btn primary" href="#book">&#128197; Book a service</a></div>
+        <div class="vgrid two">
+          <article class="vcard veh">
+            <div class="veh-img bmw"></div>
+            <div class="veh-top"><div><h2>BMW M340i</h2><small>TN 10 AB 1234</small></div><em class="badge ok">Good</em></div>
+            <div class="veh-tags"><span>2022</span><span>Petrol</span><span>18,420 km</span></div>
+            <ul class="kv"><li><span>Next service</span><b>01 Nov 2026</b></li><li><span>Last service</span><b>15 Oct 2026</b></li><li><span>Insurance valid till</span><b>13 Dec 2026</b></li><li><span>Health score</span><b>86%</b></li></ul>
+            <div class="veh-actions"><a class="btn" href="#book">Book service</a><a class="btn" href="#history">History</a></div>
+          </article>
+          <article class="vcard veh">
+            <div class="veh-img creta">&#128665;</div>
+            <div class="veh-top"><div><h2>Hyundai Creta SX</h2><small>TN 09 CD 5678</small></div><em class="badge ship">In service</em></div>
+            <div class="veh-tags"><span>2021</span><span>Diesel</span><span>41,300 km</span></div>
+            <ul class="kv"><li><span>Next service</span><b>Ongoing &middot; #BK2041</b></li><li><span>Last service</span><b>12 Sep 2026</b></li><li><span>Insurance valid till</span><b>02 Aug 2027</b></li><li><span>Health score</span><b>78%</b></li></ul>
+            <div class="veh-actions"><a class="btn" href="#dashboard">Track service</a><a class="btn" href="#history">History</a></div>
+          </article>
+        </div>
+        <article class="vcard" style="margin-top:22px">
+          <h2>Documents &amp; expiry</h2>
+          <div class="rows">
+            <div><span>&#128203; Insurance &middot; BMW M340i</span><b>13 Dec 2026</b><em class="badge warn">Due in 45 days</em></div>
+            <div><span>&#127787;&#65039; PUC certificate &middot; BMW M340i</span><b>21 Mar 2027</b><em class="badge ok">Valid</em></div>
+            <div><span>&#128203; Insurance &middot; Hyundai Creta</span><b>02 Aug 2027</b><em class="badge ok">Valid</em></div>
+            <div><span>&#128196; Registration (RC) &middot; Hyundai Creta</span><b>14 Jan 2036</b><em class="badge ok">Valid</em></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== Book Service ===== -->
+      <section class="view" id="view-book">
+        <div class="view-head"><div><h1>Book Service</h1><p>Pick a service, a date and a time. We handle the rest.</p></div></div>
+        <div class="book-layout">
+          <form class="vcard book-form" novalidate>
+            <h2>1. Choose your vehicle</h2>
+            <select name="vehicle"><option>BMW M340i &middot; TN 10 AB 1234</option><option>Hyundai Creta SX &middot; TN 09 CD 5678</option></select>
+            <h2>2. Choose a service</h2>
+            <div class="svc-pick">
+              <label><input type="radio" name="service" value="Routine Maintenance" data-price="1999" checked><span><i>&#128738;&#65039;</i><b>Routine Maintenance</b><small>Oil change, checkup &middot; from &#8377;1,999</small></span></label>
+              <label><input type="radio" name="service" value="Brake Service" data-price="2499"><span><i>&#128721;</i><b>Brake Service</b><small>Pads, discs, fluid &middot; from &#8377;2,499</small></span></label>
+              <label><input type="radio" name="service" value="Engine Repair" data-price="4999"><span><i>&#128297;</i><b>Engine Repair</b><small>Diagnosis &amp; repair &middot; from &#8377;4,999</small></span></label>
+              <label><input type="radio" name="service" value="AC Service" data-price="1799"><span><i>&#10052;&#65039;</i><b>AC Service</b><small>Gas refill, cleaning &middot; from &#8377;1,799</small></span></label>
+            </div>
+            <h2>3. Date &amp; time</h2>
+            <input type="date" name="date" required>
+            <div class="chips slots"><button type="button" class="chip" data-slot="09:00 AM">09:00 AM</button><button type="button" class="chip" data-slot="10:00 AM">10:00 AM</button><button type="button" class="chip" data-slot="12:00 PM">12:00 PM</button><button type="button" class="chip" data-slot="02:00 PM">02:00 PM</button><button type="button" class="chip" data-slot="04:00 PM">04:00 PM</button></div>
+            <label class="check"><input type="checkbox" name="pickup" checked> Free pick-up &amp; drop</label>
+            <textarea name="notes" rows="2" placeholder="Anything we should know? (optional)"></textarea>
+            <p class="form-msg" role="alert"></p>
+            <button class="btn primary wide" type="submit">Confirm booking</button>
+          </form>
+          <aside class="book-side">
+            <article class="vcard"><div class="card-top"><h2>Upcoming service</h2><span class="confirmed">Confirmed</span></div>
+              <ul class="kv"><li><span>Service</span><b>Oil Change &amp; General Checkup</b></li><li><span>Vehicle</span><b>BMW M340i</b></li><li><span>Date</span><b>01 Nov 2026, 10.00 AM</b></li><li><span>Booking ID</span><b>#BK2052</b></li></ul></article>
+            <article class="vcard summary"><h2>Booking summary</h2>
+              <ul class="kv"><li><span>Service</span><b id="sum-service">Routine Maintenance</b></li><li><span>Date</span><b id="sum-date">&mdash;</b></li><li><span>Time</span><b id="sum-time">&mdash;</b></li><li><span>Pick-up &amp; drop</span><b id="sum-pick">Free</b></li></ul>
+              <p class="sum-total">Estimated from <b id="sum-price">&#8377;1,999</b></p><small>Final price is shared before work starts. You approve every job.</small></article>
+            <article class="vcard"><h2>Included with every service</h2><ul class="ticks2"><li>Free multi-point inspection</li><li>6-month / 6,000 km warranty</li><li>Genuine parts only</li><li>Live status updates</li></ul></article>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ===== Shop Parts ===== -->
+      <section class="view" id="view-parts">
+        <div class="view-head"><div><h1>Shop Parts</h1><p>Genuine parts, delivered to your door. Flat 20% OFF this month.</p></div><span class="cart-pill">&#128722; Cart <b id="cart-count">0</b></span></div>
+        <div class="chips" data-filter="parts"><button class="chip on" data-f="all">All</button><button class="chip" data-f="brakes">Brakes</button><button class="chip" data-f="oil">Oil &amp; Fluids</button><button class="chip" data-f="filters">Filters</button><button class="chip" data-f="electrical">Electrical</button><button class="chip" data-f="wipers">Wipers &amp; Lights</button></div>
+        <div class="pgrid" id="parts-grid">
+          <article class="vcard prod" data-cat="brakes"><div class="p-ico">&#128721;</div><span class="tag2">20% OFF</span><h3>Brake Pads (Set)</h3><p>Front &middot; Ceramic</p><div class="price2"><b>&#8377;2,499</b><s>&#8377;3,124</s></div><button class="btn primary add" data-name="Brake Pads">Add to cart</button></article>
+          <article class="vcard prod" data-cat="oil"><div class="p-ico">&#128738;&#65039;</div><span class="tag2">BEST SELLER</span><h3>Engine Oil (5L)</h3><p>5W-30 Fully Synthetic</p><div class="price2"><b>&#8377;3,299</b><s>&#8377;4,124</s></div><button class="btn primary add" data-name="Engine Oil">Add to cart</button></article>
+          <article class="vcard prod" data-cat="filters"><div class="p-ico">&#127744;</div><span class="tag2">20% OFF</span><h3>Air Filter</h3><p>High-flow &middot; Washable</p><div class="price2"><b>&#8377;649</b><s>&#8377;811</s></div><button class="btn primary add" data-name="Air Filter">Add to cart</button></article>
+          <article class="vcard prod" data-cat="electrical"><div class="p-ico">&#128267;</div><span class="tag2">NEW</span><h3>Car Battery</h3><p>12V &middot; 60Ah &middot; 48M warranty</p><div class="price2"><b>&#8377;5,899</b><s>&#8377;7,374</s></div><button class="btn primary add" data-name="Car Battery">Add to cart</button></article>
+          <article class="vcard prod" data-cat="wipers"><div class="p-ico">&#127783;&#65039;</div><span class="tag2">20% OFF</span><h3>Wiper Blades (Pair)</h3><p>All-weather &middot; Silent</p><div class="price2"><b>&#8377;549</b><s>&#8377;686</s></div><button class="btn primary add" data-name="Wiper Blades">Add to cart</button></article>
+          <article class="vcard prod" data-cat="electrical"><div class="p-ico">&#9889;</div><span class="tag2">20% OFF</span><h3>Spark Plugs (Set of 4)</h3><p>Iridium &middot; Long life</p><div class="price2"><b>&#8377;1,199</b><s>&#8377;1,499</s></div><button class="btn primary add" data-name="Spark Plugs">Add to cart</button></article>
+          <article class="vcard prod" data-cat="oil"><div class="p-ico">&#128167;</div><span class="tag2">20% OFF</span><h3>Coolant (5L)</h3><p>Pre-mixed &middot; Long life</p><div class="price2"><b>&#8377;899</b><s>&#8377;1,124</s></div><button class="btn primary add" data-name="Coolant">Add to cart</button></article>
+          <article class="vcard prod" data-cat="wipers"><div class="p-ico">&#128161;</div><span class="tag2">NEW</span><h3>LED Headlight Bulbs</h3><p>6000K &middot; Pair</p><div class="price2"><b>&#8377;1,399</b><s>&#8377;1,749</s></div><button class="btn primary add" data-name="LED Headlight Bulbs">Add to cart</button></article>
+        </div>
+        <p class="empty" hidden>No parts match your search. Try another keyword.</p>
+      </section>
+
+      <!-- ===== Orders ===== -->
+      <section class="view" id="view-orders">
+        <div class="view-head"><div><h1>Orders</h1><p>Track and review everything you have bought from us.</p></div><a class="btn primary" href="#parts">&#128722; Shop parts</a></div>
+        <div class="vgrid three o-stats"><article class="vcard"><small>Total orders</small><b>5</b></article><article class="vcard"><small>Delivered</small><b>4</b></article><article class="vcard"><small>On the way</small><b>1</b></article></div>
+        <div class="chips" data-filter="orders" style="margin-top:22px"><button class="chip on" data-f="all">All</button><button class="chip" data-f="delivered">Delivered</button><button class="chip" data-f="shipped">Shipped</button></div>
+        <article class="vcard otable">
+          <div class="o-head"><span>Order ID</span><span>Item</span><span>Date</span><span>Amount</span><span>Status</span><span></span></div>
+          <div class="o-row" data-cat="delivered" data-step="5"><b>#ORD1005</b><span>Brake Pads (Set)</span><span>22 OCT 2026</span><span>&#8377;2,499</span><em class="badge ok">Delivered</em><button class="btn track-btn">Track</button><div class="track" hidden></div></div>
+          <div class="o-row" data-cat="shipped" data-step="3"><b>#ORD1004</b><span>Engine Oil (5L)</span><span>18 OCT 2026</span><span>&#8377;3,299</span><em class="badge ship">Shipped</em><button class="btn track-btn">Track</button><div class="track" hidden></div></div>
+          <div class="o-row" data-cat="delivered" data-step="5"><b>#ORD1003</b><span>Air Filter</span><span>12 OCT 2026</span><span>&#8377;649</span><em class="badge ok">Delivered</em><button class="btn track-btn">Track</button><div class="track" hidden></div></div>
+          <div class="o-row" data-cat="delivered" data-step="5"><b>#ORD1002</b><span>Car Battery</span><span>05 OCT 2026</span><span>&#8377;5,899</span><em class="badge ok">Delivered</em><button class="btn track-btn">Track</button><div class="track" hidden></div></div>
+          <div class="o-row" data-cat="delivered" data-step="5"><b>#ORD1001</b><span>Wiper Blades (Pair)</span><span>28 SEP 2026</span><span>&#8377;549</span><em class="badge ok">Delivered</em><button class="btn track-btn">Track</button><div class="track" hidden></div></div>
+        </article>
+      </section>
+
+      <!-- ===== Service History ===== -->
+      <section class="view" id="view-history">
+        <div class="view-head"><div><h1>Service History</h1><p>Every job done on your vehicles, with the work and parts used.</p></div><a class="btn primary" href="#book">&#128197; Book a service</a></div>
+        <div class="vgrid three o-stats"><article class="vcard"><small>Services completed</small><b id="h-count">6</b></article><article class="vcard"><small>Total spent (6 months)</small><b id="h-total">&#8377;0</b></article><article class="vcard"><small>Last service</small><b>15 Oct 2026</b></article></div>
+        <div class="chips" data-filter="history" style="margin-top:22px"><button class="chip on" data-f="all">All</button><button class="chip" data-f="maintenance">Maintenance</button><button class="chip" data-f="brakes">Brakes</button><button class="chip" data-f="repair">Repair</button><button class="chip" data-f="ac">AC</button></div>
+        <div class="h-list">
+          <article class="vcard h-item" data-cat="brakes" data-cost="4600"><div class="h-date"><b>15</b><span>OCT 2026</span></div><div class="h-main"><h3>Brake Service</h3><p>BMW M340i &middot; Cost &#8377;4,600</p></div><em class="badge ok">Completed</em><button class="btn more">Details</button><ul class="h-detail" hidden><li>Front brake pads replaced (ceramic)</li><li>Brake discs resurfaced</li><li>Brake fluid flushed &amp; topped up</li></ul></article>
+          <article class="vcard h-item" data-cat="maintenance" data-cost="2700"><div class="h-date"><b>12</b><span>SEP 2026</span></div><div class="h-main"><h3>Routine Maintenance</h3><p>Hyundai Creta &middot; Cost &#8377;2,700</p></div><em class="badge ok">Completed</em><button class="btn more">Details</button><ul class="h-detail" hidden><li>Engine oil &amp; oil filter changed</li><li>Air filter cleaned</li><li>Free 40-point inspection</li></ul></article>
+          <article class="vcard h-item" data-cat="ac" data-cost="4100"><div class="h-date"><b>20</b><span>AUG 2026</span></div><div class="h-main"><h3>AC Service</h3><p>BMW M340i &middot; Cost &#8377;4,100</p></div><em class="badge ok">Completed</em><button class="btn more">Details</button><ul class="h-detail" hidden><li>AC gas refilled</li><li>Cabin filter replaced</li><li>Vents and evaporator cleaned</li></ul></article>
+          <article class="vcard h-item" data-cat="maintenance" data-cost="1450"><div class="h-date"><b>08</b><span>JUL 2026</span></div><div class="h-main"><h3>Wheel Alignment &amp; Balancing</h3><p>Hyundai Creta &middot; Cost &#8377;1,450</p></div><em class="badge ok">Completed</em><button class="btn more">Details</button><ul class="h-detail" hidden><li>4-wheel alignment</li><li>Wheel balancing &amp; tyre rotation</li></ul></article>
+          <article class="vcard h-item" data-cat="repair" data-cost="3400"><div class="h-date"><b>17</b><span>JUN 2026</span></div><div class="h-main"><h3>Engine Repair</h3><p>BMW M340i &middot; Cost &#8377;3,400</p></div><em class="badge ok">Completed</em><button class="btn more">Details</button><ul class="h-detail" hidden><li>Spark plugs replaced (set of 4)</li><li>Ignition coil tested</li><li>Engine performance check</li></ul></article>
+          <article class="vcard h-item" data-cat="maintenance" data-cost="2200"><div class="h-date"><b>14</b><span>MAY 2026</span></div><div class="h-main"><h3>Routine Maintenance</h3><p>BMW M340i &middot; Cost &#8377;2,200</p></div><em class="badge ok">Completed</em><button class="btn more">Details</button><ul class="h-detail" hidden><li>Engine oil &amp; filter changed</li><li>Fluid levels checked</li><li>Free multi-point inspection</li></ul></article>
+        </div>
+      </section>
+
+      <!-- ===== Profile ===== -->
+      <section class="view" id="view-profile">
+        <div class="view-head"><div><h1>Profile</h1><p>Your personal details and StacklyCare rewards.</p></div></div>
+        <div class="prof-layout">
+          <article class="vcard prof-card"><div class="avatar big">SC</div><h2 id="prof-name">Customer</h2><small>Customer &middot; Member since Jan 2024</small>
+            <div class="rewards"><div class="rw-top"><span>&#11088; Silver tier</span><b>1,250 pts</b></div><div class="bar"><em style="--w:62%"></em></div><small>750 pts to reach Gold</small></div>
+            <ul class="kv"><li><span>Vehicles</span><b>2</b></li><li><span>Orders</span><b>5</b></li><li><span>Services</span><b>6</b></li></ul></article>
+          <form class="vcard prof-form" novalidate>
+            <h2>Personal details</h2>
+            <div class="f2"><label>Full name<input name="name" value="Customer" required></label><label>Phone<input name="phone" type="tel" value="+91 98765 43210" required></label></div>
+            <label>Email<input name="email" type="email" value="" required></label>
+            <div class="f2"><label>City<input name="city" value="Chennai"></label><label>Pincode<input name="pin" value="600002"></label></div>
+            <label>Address<input name="addr" value="12, Gandhi Street, T. Nagar"></label>
+            <p class="form-msg" role="alert"></p>
+            <button class="btn primary" type="submit">Save changes</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===== Settings ===== -->
+      <section class="view" id="view-settings">
+        <div class="view-head"><div><h1>Settings</h1><p>Control notifications, preferences and security.</p></div></div>
+        <div class="vgrid two">
+          <article class="vcard"><h2>Notifications</h2>
+            <label class="switch"><span>Email updates<small>Booking and order confirmations</small></span><input type="checkbox" checked><i></i></label>
+            <label class="switch"><span>SMS reminders<small>Service due dates and pick-up alerts</small></span><input type="checkbox" checked><i></i></label>
+            <label class="switch"><span>Offers &amp; promotions<small>Discounts on genuine parts</small></span><input type="checkbox"><i></i></label></article>
+          <article class="vcard"><h2>Preferences</h2>
+            <label class="sel">Language<select><option>English</option><option>&#2980;&#2990;&#3007;&#2996;&#3021; (Tamil)</option><option>&#2361;&#2367;&#2306;&#2342;&#2368; (Hindi)</option></select></label>
+            <label class="sel">Preferred service centre<select><option>Anna Salai, Chennai</option><option>T. Nagar, Chennai</option><option>OMR, Chennai</option></select></label>
+            <label class="switch"><span>Reduce animations<small>Turn off motion across the dashboard</small></span><input type="checkbox" id="reduce-motion"><i></i></label></article>
+          <form class="vcard pw-form" novalidate><h2>Change password</h2>
+            <label class="sel">Current password<input type="password" name="cur" required></label>
+            <label class="sel">New password<input type="password" name="new" minlength="6" required></label>
+            <label class="sel">Confirm new password<input type="password" name="conf" required></label>
+            <p class="form-msg" role="alert"></p><button class="btn primary" type="submit">Update password</button></form>
+          <article class="vcard"><h2>Account</h2><p class="muted">Signed in as <b data-user-name>Customer</b>. Sign out on shared devices when you are done.</p><a class="btn" href="login.html">Sign out</a></article>
+        </div>
+      </section>
+    </main>
+  <footer class="site-footer compact"><div class="f-bottom fa"><span>&copy; 2026 StacklyCare &middot; Reliable service. Genuine care.</span><nav><a href="index.html">Home</a><a href="index.html#contact">Help &amp; Support</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></nav></div></footer>
+  </section>
+</body>
+</html>

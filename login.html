@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sign in | StacklyCare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="common.css">
+    <script src="common.js" defer></script>
+</head>
+<body class="login-page">
+    <div class="page-loader" aria-hidden="true"><div><span class="l-car">&#128663;</span><span class="l-road"></span>StacklyCare</div></div>
+    <main class="login-layout">
+        <section class="login-intro">
+            <a class="brand" href="index.html"><span class="car">&#128663;</span>StacklyCare</a>
+            <div class="login-intro-copy">
+                <p class="eyebrow">WELCOME BACK</p>
+                <h1>Care for your car starts here.</h1>
+                <p>Sign in to manage your bookings, keep track of your service history and get support when you need it.</p>
+            </div>
+            <div class="road" aria-hidden="true"><span>&#128663;</span></div>
+            <a class="back-home" href="index.html">&larr; Back to home</a>
+        </section>
+        <section class="login-panel" aria-labelledby="login-title">
+            <form class="login-form" novalidate>
+                <p class="kicker">ACCOUNT ACCESS</p>
+                <h2 id="login-title">Welcome back</h2>
+                <p class="login-subtitle">Sign in to your StacklyCare account.</p>
+                <div class="signup-only" hidden><label for="fullname">Full name</label><input id="fullname" name="fullname" type="text" autocomplete="name" placeholder="Your full name"></div>
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                <div class="password-label"><label for="password">Password</label><a href="#">Forgot password?</a></div>
+                <div class="pw-wrap"><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required minlength="6"><button class="pw-toggle" type="button" aria-label="Show password">Show</button></div>
+                <p class="form-error" role="alert"></p>
+                <label class="remember"><input type="checkbox" name="remember"> <span>Remember me</span></label>
+                <button class="login-submit" type="submit">Sign in</button>
+                <p class="signup-prompt"><span class="prompt-text">New to StacklyCare?</span> <a href="#" class="mode-toggle">Create an account</a></p>
+            </form>
+        </section>
+    </main>
+    <script src="login.js" defer></script>
+    <footer class="site-footer compact"><div class="f-bottom fa"><span>&copy; 2026 StacklyCare &middot; Reliable service. Genuine care.</span><nav><a href="index.html">Home</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="index.html#contact">Help</a></nav></div></footer>
+</body>
+</html>
